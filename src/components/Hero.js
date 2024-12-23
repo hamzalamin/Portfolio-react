@@ -9,6 +9,7 @@ const Hero = () => {
     "Full-Stack Developer",
     "Problem Solver",
     "Creative Thinker",
+    "Software architect"
   ];
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
 
@@ -58,10 +59,12 @@ const Hero = () => {
               </span>
             </div>
 
-            <p className="text-gray-300 text-lg max-w-lg font-mono">
-              Passionate about creating elegant solutions through code. Turning
-              ideas into reality with modern web technologies.
-            </p>
+            <div className="flex-1">
+              <p className="text-lg text-gray-300 leading-relaxed font-mono">
+                Passionate about creating elegant solutions through code.
+                Turning ideas into reality with modern web technologies.
+              </p>
+            </div>
 
             <div className="flex flex-wrap gap-6 items-center">
               {[
@@ -114,7 +117,6 @@ const Hero = () => {
             </div>
           </div>
 
-         
           <div className="relative w-full md:w-[80%] mx-auto">
             <div className="relative z-10 transform transition-transform duration-700 hover:scale-105">
               <div className="aspect-square rounded-2xl overflow-hidden relative">
