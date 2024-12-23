@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaGraduationCap, FaLaptopCode, FaFootballBall, FaSlidersH } from 'react-icons/fa';
-import { motion } from 'framer-motion';
 import Profile from "../images/admin.jpg";
 
 const About = () => {
