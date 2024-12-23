@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ExternalLink, Github, ChevronRight } from "lucide-react";
-import ITLens from "../images/survey-image.jpg";
+import ITLens from "../images/Lens2-mg.jpg";
 import Citronix from "../images/citronix-image.jpg";
 import MajesticCup from "../images/MajesticCup-image.jpg";
 import SmartBank from "../images/smartBank-image.jpg";
