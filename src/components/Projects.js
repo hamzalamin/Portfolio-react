@@ -18,6 +18,7 @@ const Projects = () => {
       description:
         "ITLens is a robust survey application designed for the IT domain, focusing on providing structured surveys that help gather meaningful data for IT-related topics. The core functionality of the platform revolves around the creation and management of surveys, divided into chapters and sub-chapters, each containing various questions tailored to specific needs. Built with Spring Boot, ITLens ensures a seamless and scalable experience for users.",
       link: "https://github.com/hamzalamin/ITLens",
+      demo: "#",
       imageUrl: ITLens,
       technologies:
         "Spring Boot (REST API), PostgreSQL, JUnit 5, Mockito, Jenkins, Docker",
@@ -28,6 +29,7 @@ const Projects = () => {
       description:
         "The Citronix project aims to develop a management application for a lemon farm, enabling farmers to track production, harvesting, and sales of their products. The application will facilitate the management of farms, fields, trees, harvests, and sales, while optimizing the tracking of tree productivity based on their age.",
       link: "https://github.com/hamzalamin/Citronix",
+      demo: "#",
       imageUrl: Citronix,
       technologies:
         "Spring Boot (REST API), PostgreSQL, JUnit 5, Mockito, Selenium",
@@ -38,6 +40,7 @@ const Projects = () => {
       description:
         "MajesticCup is a secure API designed for managing football competitions in a knockout format. it allows administrators to organize tournaments, manage teams and players, automate competition phases via a draw system, and track real-time statistics. The application uses JWT for authentication and manages role-based access control (Admin, User).",
       link: "https://github.com/hamzalamin/MajesticCup-",
+      demo: "#",
       imageUrl: MajesticCup,
       technologies: "Spring Boot (REST API), MongoDB, Spring Security (JWT)",
       category: "backend",
@@ -47,6 +50,7 @@ const Projects = () => {
       description:
         "SmartBank is an application designed to help clients simulate and calculate their loan monthly payments. It provides an intuitive user interface that allows users to easily input loan details and receive accurate calculations. The system ensures efficient loan management and user-friendly experience.",
       link: "https://github.com/hamzalamin/simulation",
+      demo: "#",
       imageUrl: SmartBank,
       technologies:
         "Java EE, JPA, Hibernate, JSP, JSTL, SASS, JavaScript, JUnit, Mockito, Tomcat",
@@ -57,6 +61,7 @@ const Projects = () => {
       description:
         "The Library Management System allows users to browse, reserve, and purchase books with different user roles: Admin, Operator, and User. Admins manage book categories and operator accounts, while operators oversee the books, reservations, and customers. Users can reserve books for specified periods and receive email notifications if they fail to return them on time.",
       link: "https://github.com/hamzalamin/Priject_fill_rouge-fin-d-tude-",
+      demo: "#",
       imageUrl: LibeUp,
       technologies: "Laravel, HTML, CSS, Bootstrap, JavaScript, Docker",
       category: "fullstack",
@@ -66,6 +71,7 @@ const Projects = () => {
       description:
         "This project involves the development of a RESTful API for managing digital business cards. Built with Laravel and secured using Laravel Sanctum for authentication and access policies, users can create, edit, and delete their own business cards. The API allows users to personalize their business card information and ensures secure interactions with role-based access control.",
       link: "https://github.com/hamzalamin/Digital-BizCard",
+      demo: "#",
       imageUrl: Card,
       technologies: "Laravel, Laravel Sanctum, ReactJS, REST API, Docker",
       category: "fullstack",
@@ -75,6 +81,7 @@ const Projects = () => {
       description:
         "Evento is an application designed for managing and reserving seats for events. It enables users to browse available events, select seats, and make reservations easily. The platform provides a responsive and user-friendly interface, with interactive features to enhance the user experience. Administrators can manage events and track reservations.",
       link: "https://github.com/hamzalamin/EVENTO-",
+      demo: "#",
       imageUrl: Evento,
       technologies: "Laravel, HTML, CSS, Bootstrap, JavaScript, Docker",
       category: "fullstack",
@@ -84,6 +91,7 @@ const Projects = () => {
       description:
         "This is my personal portfolio, showcasing my skills, projects, and achievements as a web developer. Built with React.js and styled with Tailwind CSS, this portfolio features a clean and responsive design with sections such as a hero banner, about me, and more. It is designed to give potential employers or collaborators an overview of my technical abilities and passion for web development.",
       link: "https://github.com/hamzalamin/Portfolio-react",
+      demo: "https://hamzalamin.github.io/Portfolio-react/",
       imageUrl: Portfolio,
       technologies: "React Js, Tailwind CSS",
       category: "frontend",
@@ -176,7 +184,7 @@ const Projects = () => {
                     <span className="font-mono">Source Code</span>
                   </a>
                   <a
-                    href={project.link}
+                    href={project.demo || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors duration-300 z-10"

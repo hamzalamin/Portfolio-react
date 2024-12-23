@@ -27,10 +27,9 @@ const Navbar = () => {
 
   const scrollToSection = (section) => {
     setIsOpen(false);
-    navigate("/"); 
     scroller.scrollTo(section, {
       smooth: true,
-      offset: -50, 
+      offset: -50,
       duration: 500,
     });
   };
@@ -51,9 +50,7 @@ const Navbar = () => {
             <span className="relative z-10 text-white transition-colors duration-300">
               <span className="text-cyan-400">LAMIN</span>.H
             </span>
-            <div
-              className="absolute inset-0 h-1 w-full bg-cyan-400 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 bottom-0"
-            ></div>
+            <div className="absolute inset-0 h-1 w-full bg-cyan-400 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 bottom-0"></div>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -73,9 +70,7 @@ const Navbar = () => {
                   {item}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
                 </span>
-                <div
-                  className="absolute inset-0 h-0 bg-cyan-400/10 group-hover:h-full transition-all duration-300 rounded"
-                ></div>
+                <div className="absolute inset-0 h-0 bg-cyan-400/10 group-hover:h-full transition-all duration-300 rounded"></div>
               </button>
             ))}
           </div>
@@ -119,11 +114,15 @@ const Navbar = () => {
             className="absolute inset-0 bg-gray-900/95 backdrop-blur-md"
             onClick={() => setIsOpen(false)}
           ></div>
-          <nav className="relative h-full flex flex-col items-center justify-center space-y-8 text-2xl">
+          <nav 
+            className="relative h-full flex flex-col items-center justify-center space-y-8 text-2xl"
+            onClick={() => setIsOpen(false)}
+          >
             {navItems.map((item) => (
               <button
                 key={item}
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation();
                   if (item !== "Projects") {
                     scrollToSection(item.toLowerCase());
                   } else {
