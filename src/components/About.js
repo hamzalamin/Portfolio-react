@@ -19,17 +19,17 @@ const About = () => {
       skills: ["Full Stack", "Laravel 10", "React.js", "Team Collaboration", "Agile"]
     },
     {
+      title: "Agile Methodology",
+      icon: <FaSlidersH className="w-6 h-6" />,
+      description: "I strongly believe in the Agile methodology, which I apply to my projects. Whether personal or professional, Agile principles help me stay organized, meet deadlines, and continuously improve the quality of my work.",
+      principles: ["Iterative Development", "Continuous Integration", "Sprint Planning"]
+    },
+    {
       title: "Interests",
       icon: <FaFootballBall className="w-6 h-6" />,
       description: "Outside of development, I'm passionate about football. I played for FATEH Inezegan, a local football team in my city. Additionally, I enjoy exploring new technologies and integrating them into real-world projects. Problem-solving is one of my greatest strengths, and I always strive to enhance my skills.",
       highlights: ["Football Player", "Tech Enthusiast", "Problem Solver"]
     },
-    {
-      title: "Agile Methodology",
-      icon: <FaSlidersH className="w-6 h-6" />,
-      description: "I strongly believe in the Agile methodology, which I apply to my projects. Whether personal or professional, Agile principles help me stay organized, meet deadlines, and continuously improve the quality of my work.",
-      principles: ["Iterative Development", "Continuous Integration", "Sprint Planning"]
-    }
   ];
 
   return (
