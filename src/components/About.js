@@ -41,7 +41,6 @@ const About = () => {
           </span>
         </h3>
 
-        {/* Profile Card */}
         <div className="relative group mb-24">
           <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
           <div className="relative bg-gray-800 rounded-lg p-8">
@@ -66,7 +65,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Timeline Sections */}
         <div className="space-y-12">
           {sections.map((section, index) => (
             <div
@@ -135,7 +133,6 @@ const About = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
         <div className="mt-16 text-center">
           <button className="group relative px-8 py-3 bg-gray-800 text-cyan-400 overflow-hidden">
             <div className="absolute inset-0 w-3 bg-cyan-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>

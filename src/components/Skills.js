@@ -16,7 +16,6 @@ const SkillCard = ({ category, isFlipped, onFlip }) => {
       onClick={onFlip}
     >
       <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
-        {/* Front of card */}
         <div className="absolute w-full h-full backface-hidden">
           <div className="h-full p-6 bg-gradient-to-br from-cyan-900 to-gray-900 rounded-xl shadow-lg">
             <div className="flex flex-col items-center h-full">
@@ -36,7 +35,6 @@ const SkillCard = ({ category, isFlipped, onFlip }) => {
           </div>
         </div>
 
-        {/* Back of card */}
         <div className="absolute w-full h-full backface-hidden rotate-y-180">
           <div className="h-full p-6 bg-gradient-to-br from-gray-900 to-cyan-900 rounded-xl shadow-lg">
             <div className="flex flex-col h-full">
@@ -188,7 +186,6 @@ const Skills = () => {
           from { width: 0; }
         }
 
-        /* Monospace font for all text in the skills section */
         .space-y-4, .text-sm, .text-xl, .text-2xl, .font-bold {
           font-family: 'Courier New', Courier, monospace;
         }

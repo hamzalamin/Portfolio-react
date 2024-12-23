@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const scrollToSection = (section) => {
     setIsOpen(false);
-    navigate('/'); // Navigate to the homepage
+    navigate('/'); 
     scroller.scrollTo(section, {
       smooth: true,
       offset: -50,
@@ -34,7 +34,6 @@ const Navbar = () => {
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <Link
             to="/"
             className="group relative overflow-hidden font-mono text-2xl font-bold"
@@ -47,7 +46,6 @@ const Navbar = () => {
             ></div>
           </Link>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
@@ -74,7 +72,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden relative w-10 h-10 text-white focus:outline-none"
@@ -95,7 +92,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         <div
           className={`fixed inset-0 z-40 transform transition-transform duration-300 md:hidden ${
             isOpen ? 'translate-x-0' : 'translate-x-full'

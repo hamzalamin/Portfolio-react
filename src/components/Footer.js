@@ -4,12 +4,10 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-8 px-4">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
-        {/* Left side: Copyright text */}
         <p className="text-sm md:text-base text-center font-mono md:text-left">
           © 2024 Hamza Lamin. All rights reserved.
         </p>
 
-        {/* Right side: Social media or contact links */}
         <div className="flex space-x-6 justify-center md:justify-end">
           <a
             href="https://github.com/hamzalamin"
