@@ -1,35 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { scroller } from 'react-scroll';
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { scroller } from "react-scroll";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const navItems = ["About", "Projects", "Skills", "Contact"];
   const navigate = useNavigate();
+  const navItems = ["About", "Projects", "Skills", "Contact"];
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const debounce = (fn, delay) => {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), delay);
+      };
+    };
+    const debouncedHandleScroll = debounce(handleScroll, 50);
+    window.addEventListener("scroll", debouncedHandleScroll);
+
+    return () => window.removeEventListener("scroll", debouncedHandleScroll);
   }, []);
 
   const scrollToSection = (section) => {
     setIsOpen(false);
-    navigate('/'); 
+    navigate("/"); 
     scroller.scrollTo(section, {
       smooth: true,
-      offset: -50,
+      offset: -50, 
       duration: 500,
     });
   };
 
   return (
     <header
-      className={`fixed w-full top-0 z-50 transition-all duration-300 bg-gray-900 ${
-        scrolled ? 'bg-gray-900/95 backdrop-blur-md' : 'bg-gray-900'
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-gray-900/95 backdrop-blur-md" : "bg-gray-900"
       }`}
     >
       <nav className="container mx-auto px-4 py-4">
@@ -37,6 +46,7 @@ const Navbar = () => {
           <Link
             to="/"
             className="group relative overflow-hidden font-mono text-2xl font-bold"
+            aria-label="Navigate to home"
           >
             <span className="relative z-10 text-white transition-colors duration-300">
               <span className="text-cyan-400">LAMIN</span>.H
@@ -54,16 +64,14 @@ const Navbar = () => {
                   if (item !== "Projects") {
                     scrollToSection(item.toLowerCase());
                   } else {
-                    window.location.href = "/projects";
+                    navigate("/projects");
                   }
                 }}
                 className="group relative px-2 py-1 text-white font-mono"
               >
                 <span className="relative z-10">
                   {item}
-                  <span
-                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"
-                  ></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
                 </span>
                 <div
                   className="absolute inset-0 h-0 bg-cyan-400/10 group-hover:h-full transition-all duration-300 rounded"
@@ -74,19 +82,29 @@ const Navbar = () => {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-label="Toggle navigation menu"
             className="md:hidden relative w-10 h-10 text-white focus:outline-none"
           >
             <span
-              className={`absolute left-1/2 top-1/2 block w-5 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${isOpen ? 'rotate-180' : ''}`}
+              className={`absolute left-1/2 top-1/2 block w-5 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${
+                isOpen ? "rotate-180" : ""
+              }`}
             >
               <span
-                className={`absolute top-0 right-0 w-5 h-0.5 bg-current transform transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}
+                className={`absolute top-0 right-0 w-5 h-0.5 bg-current transform transition-all duration-300 ${
+                  isOpen ? "rotate-45 translate-y-1.5" : ""
+                }`}
               ></span>
               <span
-                className={`absolute top-1.5 right-0 w-5 h-0.5 bg-current transform transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}
+                className={`absolute top-1.5 right-0 w-5 h-0.5 bg-current transform transition-all duration-300 ${
+                  isOpen ? "opacity-0" : ""
+                }`}
               ></span>
               <span
-                className={`absolute top-3 right-0 w-5 h-0.5 bg-current transform transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}
+                className={`absolute top-3 right-0 w-5 h-0.5 bg-current transform transition-all duration-300 ${
+                  isOpen ? "-rotate-45 -translate-y-1.5" : ""
+                }`}
               ></span>
             </span>
           </button>
@@ -94,7 +112,7 @@ const Navbar = () => {
 
         <div
           className={`fixed inset-0 z-40 transform transition-transform duration-300 md:hidden ${
-            isOpen ? 'translate-x-0' : 'translate-x-full'
+            isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div
@@ -109,7 +127,7 @@ const Navbar = () => {
                   if (item !== "Projects") {
                     scrollToSection(item.toLowerCase());
                   } else {
-                    window.location.href = "/projects";
+                    navigate("/projects");
                   }
                 }}
                 className="group relative text-white font-mono transition-colors duration-300"

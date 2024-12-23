@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom"; // Use HashRouter
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
@@ -17,8 +17,9 @@ const App = () => {
       once: true,
     });
   }, []);
+  
   return (
-    <Router>
+    <Router> {/* HashRouter here */}
       <div className="font-sans">
         <Navbar />
         <main className="mt-16">
