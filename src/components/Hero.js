@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
-import myImage from "../images/hamzalamin-removebg-preview.png";
+import myImage from "../images/chacoco.png";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
