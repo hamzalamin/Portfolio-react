@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Portfolio-react/static/css/main.e8cbdb73.css",
+    "main.js": "/Portfolio-react/static/js/main.4c9cf093.js",
+    "static/js/488.9c6a710a.chunk.js": "/Portfolio-react/static/js/488.9c6a710a.chunk.js",
+    "static/media/3L3A0311.JPG": "/Portfolio-react/static/media/3L3A0311.9a482c832f57325f2679.JPG",
+    "static/media/admin.jpg": "/Portfolio-react/static/media/admin.2487704ca17fcac7b478.jpg",
+    "static/media/hamzalamin-removebg-preview.png": "/Portfolio-react/static/media/hamzalamin-removebg-preview.b6f05a28f8850ce0491c.png",
+    "static/media/libeUp-image.jpg": "/Portfolio-react/static/media/libeUp-image.0af09d7a0ef78aeeb4a8.jpg",
+    "static/media/Evento-image.jpg": "/Portfolio-react/static/media/Evento-image.8c2f294e7fa49edbe2de.jpg",
+    "static/media/MajesticCup-image.jpg": "/Portfolio-react/static/media/MajesticCup-image.49b4f837cf3b85816a3a.jpg",
+    "static/media/card-image.jpg": "/Portfolio-react/static/media/card-image.00e570395f7cf4e39147.jpg",
+    "static/media/citronix-image.jpg": "/Portfolio-react/static/media/citronix-image.0e07b3823d9b0882273a.jpg",
+    "static/media/smartBank-image.jpg": "/Portfolio-react/static/media/smartBank-image.6a6f16ba0d352fa92856.jpg",
+    "static/media/survey-image.jpg": "/Portfolio-react/static/media/survey-image.f7a6f7714cacbbbe9ad0.jpg",
+    "index.html": "/Portfolio-react/index.html",
+    "main.e8cbdb73.css.map": "/Portfolio-react/static/css/main.e8cbdb73.css.map",
+    "main.4c9cf093.js.map": "/Portfolio-react/static/js/main.4c9cf093.js.map",
+    "488.9c6a710a.chunk.js.map": "/Portfolio-react/static/js/488.9c6a710a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8cbdb73.css",
+    "static/js/main.4c9cf093.js"
+  ]
+}
