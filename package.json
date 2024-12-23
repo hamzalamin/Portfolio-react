@@ -1,5 +1,6 @@
 {
   "name": "portfolio-hamzalamin",
+  "homepage": "https://hamzalamin.github.io/Portfolio-react/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,6 +8,7 @@
     "cra-template": "1.2.0",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^11.15.0",
+    "gh-pages": "^6.2.0",
     "lucide-react": "^0.469.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -20,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": [
