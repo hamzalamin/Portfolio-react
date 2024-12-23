@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import emailjs from 'emailjs-com';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -35,16 +37,38 @@ const Contact = () => {
     e.preventDefault();
     setIsLoading(true);
     
-    setTimeout(() => {
-      setStatus({
-        type: 'success',
-        message: '✨ Message sent successfully! We\'ll get back to you soon.'
-      });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsLoading(false);
-      setCharCount(0);
-    }, 1500);
-  };
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message
+    };
+
+    try {
+        const result = await emailjs.send(
+            'service_3psxfvq', 
+            'template_1mbuopt',
+            templateParams,
+            'OTP2-I49ei3nlcMrK'
+        );
+        console.log(result.text);
+        setStatus({
+            type: 'success',
+            message: '✨ Message sent successfully! We\'ll get back to you soon.'
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setIsLoading(false);
+        setCharCount(0);
+    } catch (error) {
+        console.error('Failed to send email:', error);
+        setStatus({
+            type: 'error',
+            message: '😞 Something went wrong. Please try again later.'
+        });
+        setIsLoading(false);
+    }
+};
+
 
   const handleMessageChange = (e) => {
     const text = e.target.value;
