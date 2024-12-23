@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { scroller } from 'react-scroll';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
   const navItems = ["About", "Projects", "Skills", "Contact"];
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +18,7 @@ const Navbar = () => {
 
   const scrollToSection = (section) => {
     setIsOpen(false);
+    navigate('/'); // Navigate to the homepage
     scroller.scrollTo(section, {
       smooth: true,
       offset: -50,
@@ -26,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <header 
+    <header
       className={`fixed w-full top-0 z-50 transition-all duration-300 bg-gray-900 ${
         scrolled ? 'bg-gray-900/95 backdrop-blur-md' : 'bg-gray-900'
       }`}
@@ -41,7 +42,9 @@ const Navbar = () => {
             <span className="relative z-10 text-white transition-colors duration-300">
               <span className="text-cyan-400">LAMIN</span>.H
             </span>
-            <div className="absolute inset-0 h-1 w-full bg-cyan-400 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 bottom-0"></div>
+            <div
+              className="absolute inset-0 h-1 w-full bg-cyan-400 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 bottom-0"
+            ></div>
           </Link>
 
           {/* Desktop Menu */}
@@ -60,9 +63,13 @@ const Navbar = () => {
               >
                 <span className="relative z-10">
                   {item}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                  <span
+                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"
+                  ></span>
                 </span>
-                <div className="absolute inset-0 h-0 bg-cyan-400/10 group-hover:h-full transition-all duration-300 rounded"></div>
+                <div
+                  className="absolute inset-0 h-0 bg-cyan-400/10 group-hover:h-full transition-all duration-300 rounded"
+                ></div>
               </button>
             ))}
           </div>
@@ -72,25 +79,17 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden relative w-10 h-10 text-white focus:outline-none"
           >
-            <span 
-              className={`absolute left-1/2 top-1/2 block w-5 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${
-                isOpen ? 'rotate-180' : ''
-              }`}
+            <span
+              className={`absolute left-1/2 top-1/2 block w-5 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${isOpen ? 'rotate-180' : ''}`}
             >
-              <span 
-                className={`absolute top-0 right-0 w-5 h-0.5 bg-current transform transition-all duration-300 ${
-                  isOpen ? 'rotate-45 translate-y-1.5' : ''
-                }`}
+              <span
+                className={`absolute top-0 right-0 w-5 h-0.5 bg-current transform transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}
               ></span>
-              <span 
-                className={`absolute top-1.5 right-0 w-5 h-0.5 bg-current transform transition-all duration-300 ${
-                  isOpen ? 'opacity-0' : ''
-                }`}
+              <span
+                className={`absolute top-1.5 right-0 w-5 h-0.5 bg-current transform transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}
               ></span>
-              <span 
-                className={`absolute top-3 right-0 w-5 h-0.5 bg-current transform transition-all duration-300 ${
-                  isOpen ? '-rotate-45 -translate-y-1.5' : ''
-                }`}
+              <span
+                className={`absolute top-3 right-0 w-5 h-0.5 bg-current transform transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}
               ></span>
             </span>
           </button>
@@ -102,7 +101,10 @@ const Navbar = () => {
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
-          <div className="absolute inset-0 bg-gray-900/95 backdrop-blur-md" onClick={() => setIsOpen(false)}></div>
+          <div
+            className="absolute inset-0 bg-gray-900/95 backdrop-blur-md"
+            onClick={() => setIsOpen(false)}
+          ></div>
           <nav className="relative h-full flex flex-col items-center justify-center space-y-8 text-2xl">
             {navItems.map((item) => (
               <button
