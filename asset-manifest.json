@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio-react/static/css/main.e8cbdb73.css",
-    "main.js": "/Portfolio-react/static/js/main.e588ed32.js",
+    "main.css": "/Portfolio-react/static/css/main.f80a58ad.css",
+    "main.js": "/Portfolio-react/static/js/main.dd848b8a.js",
     "static/js/488.9c6a710a.chunk.js": "/Portfolio-react/static/js/488.9c6a710a.chunk.js",
     "static/media/chacoco.png": "/Portfolio-react/static/media/chacoco.96762e53e4dfa6e0c6fb.png",
     "static/media/3L3A0311.JPG": "/Portfolio-react/static/media/3L3A0311.9a482c832f57325f2679.JPG",
@@ -14,12 +14,12 @@
     "static/media/smartBank-image.jpg": "/Portfolio-react/static/media/smartBank-image.6a6f16ba0d352fa92856.jpg",
     "static/media/Lens2-mg.jpg": "/Portfolio-react/static/media/Lens2-mg.8b977d553537fae478be.jpg",
     "index.html": "/Portfolio-react/index.html",
-    "main.e8cbdb73.css.map": "/Portfolio-react/static/css/main.e8cbdb73.css.map",
-    "main.e588ed32.js.map": "/Portfolio-react/static/js/main.e588ed32.js.map",
+    "main.f80a58ad.css.map": "/Portfolio-react/static/css/main.f80a58ad.css.map",
+    "main.dd848b8a.js.map": "/Portfolio-react/static/js/main.dd848b8a.js.map",
     "488.9c6a710a.chunk.js.map": "/Portfolio-react/static/js/488.9c6a710a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8cbdb73.css",
-    "static/js/main.e588ed32.js"
+    "static/css/main.f80a58ad.css",
+    "static/js/main.dd848b8a.js"
   ]
 }
