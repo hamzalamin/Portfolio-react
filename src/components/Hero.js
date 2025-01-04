@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 import myImage from "../images/chacoco.png";
 
 const Hero = () => {
@@ -9,7 +9,7 @@ const Hero = () => {
     "Full-Stack Developer",
     "Problem Solver",
     "Creative Thinker",
-    "Software architect"
+    "Software architect",
   ];
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
 
@@ -45,7 +45,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6 md:pr-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <h1 className="text-4xl md:text-6xl font-mono mb-4">
               Hi, I'm <span className="text-cyan-400">Hamza Lamin</span>
             </h1>
 
@@ -61,8 +61,9 @@ const Hero = () => {
 
             <div className="flex-1">
               <p className="text-lg text-gray-300 leading-relaxed font-mono">
-                Passionate about creating elegant solutions through code.
-                Turning ideas into reality with modern web technologies.
+                Shaping ideas into reality, like sculpting dreams with code. I
+                harness the power of modern web technologies to build seamless
+                digital experiences that resonate and inspire
               </p>
             </div>
 
@@ -79,9 +80,9 @@ const Hero = () => {
                   label: "LinkedIn",
                 },
                 {
-                  icon: FaInstagram,
-                  href: "https://www.instagram.com/fourteenunregistered__/",
-                  label: "Instagram",
+                  icon: FaTwitter,
+                  href: "https://x.com/FlHemza",
+                  label: "X",
                 },
                 {
                   icon: FaEnvelope,
@@ -104,16 +105,24 @@ const Hero = () => {
                   />
                 </a>
               ))}
-
-              <a
-                href="#contact"
-                className="relative inline-flex items-center px-8 py-3 overflow-hidden font-mono font-medium text-cyan-400 border border-cyan-400 rounded-lg group"
-              >
-                <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-cyan-400 rounded-full group-hover:w-56 group-hover:h-56"></span>
-                <span className="relative group-hover:text-gray-900">
-                  Contact me
-                </span>
-              </a>
+              <div className="rounded-lg text-center">
+                <button
+                  onClick={() => {
+                    document.getElementById("contact").scrollIntoView({
+                      behavior: "smooth", 
+                      block: "start", 
+                    });
+                  }}
+                  className="group relative px-8 py-3 bg-gray-800 text-cyan-400 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-105"
+                >
+                  <div className="absolute inset-0 w-3 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-[250ms] ease-out group-hover:w-full" />
+                  <span className="rounded-lg relative group-hover:text-gray-900 font-mono">
+                    Contact me
+                  </span>
+                  <div className="absolute top-0 left-0 w-2 h-2 bg-cyan-400/30 rounded-full group-hover:animate-ping" />
+                  <div className="absolute bottom-0 right-0 w-2 h-2 bg-cyan-400/30 rounded-full group-hover:animate-ping delay-100" />
+                </button>
+              </div>
             </div>
           </div>
 
@@ -125,7 +134,7 @@ const Hero = () => {
                 <img
                   src={myImage}
                   alt="Hamza Lamin"
-                  className={` w-[110%] h-[110%] object-contain scale-90 transition-opacity duration-700 -mt-6 ${
+                  className={`w-[110%] h-[110%] object-contain scale-90 transition-opacity duration-700 -mt-6 ${
                     isImageLoaded ? "opacity-100" : "opacity-0"
                   }`}
                   onLoad={() => setIsImageLoaded(true)}
@@ -133,8 +142,14 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="absolute -inset-4 bg-cyan-400/10 rounded-2xl blur-lg -z-10" />
-            <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-transparent rounded-2xl blur-lg -z-10" />
+            <div className="absolute -inset-4 bg-cyan-400/10 rounded-2xl blur-lg -z-10 animate-pulse" />
+            <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-transparent rounded-2xl blur-lg -z-10 animate-pulse" />
+
+            <div className="absolute top-0 left-0 w-2 h-2 bg-cyan-400/30 rounded-full -z-10 animate-ping" />
+            <div className="absolute bottom-0 right-0 w-2 h-2 bg-cyan-400/30 rounded-full -z-10 animate-ping delay-700" />
+            <div className="absolute top-1/2 right-0 w-2 h-2 bg-cyan-400/30 rounded-full -z-10 animate-ping delay-1000" />
+
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-transparent rounded-2xl -z-20 animate-gradient" />
           </div>
         </div>
       </div>

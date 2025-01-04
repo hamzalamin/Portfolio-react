@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { FaPaintBrush, FaServer, FaTools } from "react-icons/fa";
+import { Code, Layers, Database, Wrench, FileCode, CloudCog } from 'lucide-react';
 
-const getPercentageForLevel = (level) => {
-  switch (level.toLowerCase()) {
-    case 'advanced': return 90;
-    case 'intermediate': return 75;
-    default: return 60;
-  }
+const SkillTag = ({ name }) => {
+  return (
+    <div className="group relative flex items-center gap-2 px-3 py-2 bg-cyan-950/30 rounded-lg border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300">
+      <span className="font-mono text-gray-300 group-hover:text-cyan-400 transition-colors">
+        {name}
+      </span>
+    </div>
+  );
 };
 
 const SkillCard = ({ category, isFlipped, onFlip }) => {
@@ -17,53 +19,41 @@ const SkillCard = ({ category, isFlipped, onFlip }) => {
     >
       <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
         <div className="absolute w-full h-full backface-hidden">
-          <div className="h-full p-6 bg-gradient-to-br from-cyan-900 to-gray-900 rounded-xl shadow-lg">
+          <div className="h-full p-6 bg-gradient-to-br from-cyan-900 to-gray-900 rounded-xl shadow-lg border border-cyan-400/10">
             <div className="flex flex-col items-center h-full">
               <div className="mb-4 transform transition-transform group-hover:scale-110">
                 {category.icon}
               </div>
-              <h4 className="text-2xl font-bold text-cyan-400 mb-4">
+              <h4 className="text-2xl font-mono font-bold text-cyan-400 mb-4">
                 {category.title}
               </h4>
-              <p className="text-gray-300 text-center mb-6">
+              <p className="font-mono text-gray-300 text-center mb-6">
                 {category.description}
               </p>
-              <div className="mt-auto text-cyan-400 text-sm">
-                Click to see skills →
+              <div className="mt-auto">
+                <span className="font-mono text-sm text-cyan-400 border border-cyan-400/30 px-4 py-2 rounded-lg hover:bg-cyan-400/10 transition-colors">
+                  View Skills →
+                </span>
               </div>
             </div>
           </div>
         </div>
 
         <div className="absolute w-full h-full backface-hidden rotate-y-180">
-          <div className="h-full p-6 bg-gradient-to-br from-gray-900 to-cyan-900 rounded-xl shadow-lg">
+          <div className="h-full p-6 bg-gradient-to-br from-gray-900 to-cyan-900 rounded-xl shadow-lg border border-cyan-400/10">
             <div className="flex flex-col h-full">
-              <h5 className="text-xl font-bold text-cyan-400 mb-4 text-center">
+              <h5 className="text-xl font-mono font-bold text-cyan-400 mb-4 text-center">
                 {category.title}
               </h5>
-              <div className="space-y-4 flex-grow overflow-y-auto">
+              <div className="space-y-2 flex-grow overflow-y-auto pr-2">
                 {category.items.map((item, idx) => (
-                  <div key={idx} className="space-y-1">
-                    <div className="flex justify-between text-sm text-gray-300">
-                      <span>{item.name}</span>
-                      <span className="text-cyan-400">
-                        {getPercentageForLevel(item.level)}%
-                      </span>
-                    </div>
-                    <div className="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-cyan-400 rounded-full transition-all duration-1000 ease-out"
-                        style={{ 
-                          width: `${getPercentageForLevel(item.level)}%`,
-                          animation: 'progress 1.5s ease-out'
-                        }}
-                      />
-                    </div>
-                  </div>
+                  <SkillTag key={idx} name={item.name} />
                 ))}
               </div>
-              <div className="mt-auto text-cyan-400 text-sm text-center">
-                Click to flip back ←
+              <div className="mt-4 text-center">
+                <span className="font-mono text-sm text-cyan-400 border border-cyan-400/30 px-4 py-2 rounded-lg hover:bg-cyan-400/10 transition-colors">
+                  ← Back
+                </span>
               </div>
             </div>
           </div>
@@ -79,49 +69,78 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: "Frontend Development",
-      description: "Creating responsive and interactive user interfaces",
-      icon: <FaPaintBrush className="text-5xl text-cyan-400" />,
+      title: "Programming Languages",
+      description: "Core languages for software and application development",
+      icon: <Code className="text-5xl text-cyan-400" />,
       items: [
-        { name: "HTML", level: "Advanced" },
-        { name: "CSS", level: "Advanced" },
-        { name: "JavaScript", level: "Intermediate" },
-        { name: "React.js", level: "" }
+        { name: "Java" },
+        { name: "PHP" },
+        { name: "JavaScript" },
+        { name: "TypeScript" },
+        { name: "C" },
+        { name: "Python" }
       ]
     },
     {
-      title: "Backend Development",
-      description: "Building robust server-side applications",
-      icon: <FaServer className="text-5xl text-cyan-400" />,
+      title: "Frontend Technologies",
+      description: "Libraries, frameworks, and tools for building user interfaces",
+      icon: <Layers className="text-5xl text-cyan-400" />,
       items: [
-        { name: "PHP", level: "Advanced" },
-        { name: "Java", level: "Intermediate" },
-        { name: "Laravel", level: "Advanced" },
-        { name: "Spring Boot", level: "Advanced" },
-        { name: "Hibernate", level: "Intermediate" },
-        { name: "Jakarta EE (JEE)", level: "Intermediate" },
-        { name: "JPA", level: "Intermediate" },
-        { name: "Spring Framework", level: "Intermediate" }
+        { name: "React.js" },
+        { name: "Angular" },
+        { name: "Tailwind CSS" },
       ]
     },
     {
-      title: "Tools & Technologies",
-      description: "DevOps, Databases, and Development Tools",
-      icon: <FaTools className="text-5xl text-cyan-400" />,
+      title: "Backend Frameworks & Platforms",
+      description: "Tools and frameworks for building server-side applications",
+      icon: <FileCode className="text-5xl text-cyan-400" />,
       items: [
-        { name: "MySQL", level: "Advanced" },
-        { name: "PostgreSQL", level: "Advanced" },
-        { name: "MongoDB", level: "" },
-        { name: "Docker", level: "" },
-        { name: "Git", level: "Advanced" },
-        { name: "Maven", level: "Intermediate" },
-        { name: "Jenkins", level: "" },
-        { name: "SonarQube", level: "" },
-        { name: "Selenium", level: "" },
-        { name: "UML", level: "Advanced" }
+        { name: "Spring Framework" },
+        { name: "JPA" },
+        { name: "Hibernate" },
+        { name: "CDI" },
+        { name: "Laravel" },
+        { name: "Jakarta EE (JEE)" } 
+      ]
+    },
+    {
+      title: "Databases & Query Languages",
+      description: "Relational and NoSQL database systems and their query tools",
+      icon: <Database className="text-5xl text-cyan-400" />,
+      items: [
+        { name: "PostgreSQL" },
+        { name: "MySQL" },
+        { name: "MongoDB" }
+      ]
+    },
+    {
+      title: "DevOps & Cloud Tools",
+      description: "Technologies for CI/CD, containerization, and infrastructure",
+      icon: <CloudCog className="text-5xl text-cyan-400" />,
+      items: [
+        { name: "Maven" },
+        { name: "Docker" },
+        { name: "Jenkins" }, 
+        { name: "CI/CD" },
+        { name: "SonarQube" },
+        { name: "Selenium/JUnit" }
+      ]
+    },
+    {
+      title: "Development Tools",
+      description: "Essential tools for coding, debugging, and collaboration",
+      icon: <Wrench className="text-5xl text-cyan-400" />,
+      items: [
+        { name: "Git/GitHub" }, 
+        { name: "VS Code" },
+        { name: "IntelliJ IDEA" }, 
+        { name: "Postman" },
+        { name: "Linux" }
       ]
     }
   ];
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -148,7 +167,7 @@ const Skills = () => {
     <section
       id="skills"
       className={`py-20 bg-gray-900 text-white transition-all duration-1000 ${
-        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -182,26 +201,24 @@ const Skills = () => {
         .rotate-y-180 {
           transform: rotateY(180deg);
         }
-        @keyframes progress {
-          from { width: 0; }
+
+        /* Scrollbar styling */
+        .overflow-y-auto::-webkit-scrollbar {
+          width: 4px;
         }
 
-        .space-y-4, .text-sm, .text-xl, .text-2xl, .font-bold {
-          font-family: 'Courier New', Courier, monospace;
+        .overflow-y-auto::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 4px;
         }
 
-        /* Optional: custom scrollbar style */
-        .space-y-4::-webkit-scrollbar {
-          width: 6px;
+        .overflow-y-auto::-webkit-scrollbar-thumb {
+          background: rgba(34, 211, 238, 0.3);
+          border-radius: 4px;
         }
 
-        .space-y-4::-webkit-scrollbar-thumb {
-          background-color: rgba(0, 0, 0, 0.5);
-          border-radius: 10px;
-        }
-
-        .space-y-4::-webkit-scrollbar-track {
-          background: #f1f1f1;
+        .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+          background: rgba(34, 211, 238, 0.5);
         }
       `}</style>
     </section>

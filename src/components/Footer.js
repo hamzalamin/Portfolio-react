@@ -32,12 +32,12 @@ const Footer = () => {
             Email
           </a>
           <a
-            href="https://www.instagram.com/hamzalamin/"
+            href="https://x.com/FlHemza"
             target="_blank"
             rel="noopener noreferrer"
             className="text-cyan-400 font-mono hover:text-cyan-500 transition-all"
           >
-            Instagram
+            X
           </a>
         </div>
       </div>
