@@ -1,5 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Code, Layers, Database, Wrench, FileCode, CloudCog } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import {
+  Code,
+  Layers,
+  Database,
+  Wrench,
+  FileCode,
+  CloudCog,
+} from "lucide-react";
 
 const SkillTag = ({ name }) => {
   return (
@@ -13,11 +20,15 @@ const SkillTag = ({ name }) => {
 
 const SkillCard = ({ category, isFlipped, onFlip }) => {
   return (
-    <div 
+    <div
       className="relative w-full h-96 cursor-pointer perspective-1000"
       onClick={onFlip}
     >
-      <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
+      <div
+        className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${
+          isFlipped ? "rotate-y-180" : ""
+        }`}
+      >
         <div className="absolute w-full h-full backface-hidden">
           <div className="h-full p-6 bg-gradient-to-br from-cyan-900 to-gray-900 rounded-xl shadow-lg border border-cyan-400/10">
             <div className="flex flex-col items-center h-full">
@@ -51,7 +62,7 @@ const SkillCard = ({ category, isFlipped, onFlip }) => {
                 ))}
               </div>
               <div className="mt-4 text-center">
-                <span className="font-mono text-sm text-cyan-400 border border-cyan-400/30 px-4 py-2 rounded-lg hover:bg-cyan-400/10 transition-colors">
+                <span className="group font-mono text-sm text-cyan-400 border border-cyan-400/30 px-4 py-2 rounded-lg hover:bg-cyan-400/10 transition-colors group-hover:text-white">
                   ← Back
                 </span>
               </div>
@@ -78,18 +89,19 @@ const Skills = () => {
         { name: "JavaScript" },
         { name: "TypeScript" },
         { name: "C" },
-        { name: "Python" }
-      ]
+        { name: "Python" },
+      ],
     },
     {
       title: "Frontend Technologies",
-      description: "Libraries, frameworks, and tools for building user interfaces",
+      description:
+        "Libraries, frameworks, and tools for building user interfaces",
       icon: <Layers className="text-5xl text-cyan-400" />,
       items: [
         { name: "React.js" },
         { name: "Angular" },
         { name: "Tailwind CSS" },
-      ]
+      ],
     },
     {
       title: "Backend Frameworks & Platforms",
@@ -101,46 +113,43 @@ const Skills = () => {
         { name: "Hibernate" },
         { name: "CDI" },
         { name: "Laravel" },
-        { name: "Jakarta EE (JEE)" } 
-      ]
+        { name: "Jakarta EE (JEE)" },
+      ],
     },
     {
       title: "Databases & Query Languages",
-      description: "Relational and NoSQL database systems and their query tools",
+      description:
+        "Relational and NoSQL database systems and their query tools",
       icon: <Database className="text-5xl text-cyan-400" />,
-      items: [
-        { name: "PostgreSQL" },
-        { name: "MySQL" },
-        { name: "MongoDB" }
-      ]
+      items: [{ name: "PostgreSQL" }, { name: "MySQL" }, { name: "MongoDB" }],
     },
     {
       title: "DevOps & Cloud Tools",
-      description: "Technologies for CI/CD, containerization, and infrastructure",
+      description:
+        "Technologies for CI/CD, containerization, and infrastructure",
       icon: <CloudCog className="text-5xl text-cyan-400" />,
       items: [
         { name: "Maven" },
         { name: "Docker" },
-        { name: "Jenkins" }, 
+        { name: "Jenkins" },
         { name: "CI/CD" },
         { name: "SonarQube" },
-        { name: "Selenium/JUnit" }
-      ]
+        { name: "Selenium/JUnit" },
+      ],
     },
     {
       title: "Development Tools",
       description: "Essential tools for coding, debugging, and collaboration",
       icon: <Wrench className="text-5xl text-cyan-400" />,
       items: [
-        { name: "Git/GitHub" }, 
+        { name: "Git/GitHub" },
         { name: "VS Code" },
-        { name: "IntelliJ IDEA" }, 
+        { name: "IntelliJ IDEA" },
         { name: "Postman" },
-        { name: "Linux" }
-      ]
-    }
+        { name: "Linux" },
+      ],
+    },
   ];
-  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -157,9 +166,9 @@ const Skills = () => {
   }, []);
 
   const handleCardFlip = (index) => {
-    setFlippedCards(prev => ({
+    setFlippedCards((prev) => ({
       ...prev,
-      [index]: !prev[index]
+      [index]: !prev[index],
     }));
   };
 

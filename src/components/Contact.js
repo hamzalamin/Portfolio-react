@@ -124,7 +124,6 @@ const Contact = () => {
               </div>
 
               <div className="p-8 md:col-span-3 relative group">
-
                 <form
                   onSubmit={handleSubmit}
                   className="space-y-6 relative z-10"
@@ -188,18 +187,23 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="group w-full flex items-center justify-center px-8 py-4 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 
-              text-cyan-400 rounded-lg hover:from-cyan-400 hover:to-blue-400 hover:text-gray-900 
-              border border-cyan-400/50 focus:outline-none font-mono transition-all duration-300"
+                    className="group relative w-full flex items-center justify-center px-8 py-4 bg-gray-800 text-cyan-400 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-105 border border-cyan-400/50 focus:outline-none font-mono"
                   >
-                    {isLoading ? (
-                      <div className="w-6 h-6 border-2 border-current border-t-transparent rounded-full animate-spin" />
-                    ) : (
-                      <>
-                        Send Message
-                        <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                      </>
-                    )}
+                    <div className="absolute inset-0 w-3 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-[250ms] ease-out group-hover:w-full" />
+
+                    <span className="relative z-10 flex items-center space-x-2 group-hover:text-white">
+                      {isLoading ? (
+                        <div className="w-6 h-6 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                      ) : (
+                        <>
+                          <span>Send Message</span>
+                          <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                        </>
+                      )}
+                    </span>
+
+                    <div className="absolute top-0 left-0 w-2 h-2 bg-cyan-400/30 rounded-full group-hover:animate-ping" />
+                    <div className="absolute bottom-0 right-0 w-2 h-2 bg-cyan-400/30 rounded-full group-hover:animate-ping delay-100" />
                   </button>
                 </form>
 
