@@ -6,6 +6,7 @@ import {
   FaSlidersH,
 } from "react-icons/fa";
 import Profile from "../images/admin.jpg";
+import ParticleNetwork from './SectionBackground';
 
 const About = () => {
   const [activeSection, setActiveSection] = useState(null);
@@ -49,9 +50,12 @@ const About = () => {
       highlights: ["Football Player", "Tech Enthusiast", "Problem Solver"],
     },
   ];
+
   
   return (
     <section id="about" className="py-16 bg-gray-900 text-white min-h-screen relative overflow-hidden">
+      <ParticleNetwork />
+
       <div className="max-w-6xl mx-auto px-4 md:px-8 relative">
         <h3 className="text-5xl font-mono text-center mb-16">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">

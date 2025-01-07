@@ -8,7 +8,8 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
-import "aos/dist/aos.css"; 
+import SectionBackground from "./components/SectionBackground";
+import "aos/dist/aos.css";
 
 const App = () => {
   useEffect(() => {
@@ -17,36 +18,39 @@ const App = () => {
       once: true,
     });
   }, []);
-  
+
   return (
-    <Router> {/* HashRouter here */}
-      <div className="font-sans">
-        <Navbar />
-        <main className="mt-16">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Hero />
-                  <div id="about">
-                    <About />
-                  </div>
-                  <div id="skills">
-                    <Skills />
-                  </div>
-                  <div id="contact">
-                    <Contact />
-                  </div>
-                </>
-              }
-            />
-            <Route path="/projects" element={<Projects />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <Router>
+        <SectionBackground />
+        <section className="min-h-screen bg-transparent">
+          <div className="font-sans relative z-10">
+            <Navbar />
+            <main className="mt-16">
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <>
+                      <Hero />
+                      <div id="about">
+                        <About />
+                      </div>
+                      <div id="skills">
+                        <Skills />
+                      </div>
+                      <div id="contact">
+                        <Contact />
+                      </div>
+                    </>
+                  }
+                />
+                <Route path="/projects" element={<Projects />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </section>
+      </Router>
   );
 };
 

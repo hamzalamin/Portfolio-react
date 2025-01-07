@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 import myImage from "../images/chacoco.png";
+import ParticleNetwork from './SectionBackground';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
@@ -127,9 +128,10 @@ const Hero = () => {
           </div>
 
           <div className="relative w-full md:w-[80%] mx-auto">
-            <div className="relative z-10 transform transition-transform duration-700 hover:scale-105">
+            <div className="relative z-10">
               <div className="aspect-square rounded-2xl overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-800 to-gray-900" />
+                <ParticleNetwork />
 
                 <img
                   src={myImage}
@@ -142,6 +144,7 @@ const Hero = () => {
               </div>
             </div>
 
+
             <div className="absolute -inset-4 bg-cyan-400/10 rounded-2xl blur-lg -z-10 animate-pulse" />
             <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-transparent rounded-2xl blur-lg -z-10 animate-pulse" />
 
@@ -151,6 +154,7 @@ const Hero = () => {
 
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-transparent rounded-2xl -z-20 animate-gradient" />
           </div>
+          
         </div>
       </div>
     </section>
