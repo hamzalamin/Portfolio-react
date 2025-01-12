@@ -108,7 +108,11 @@ const Skills = () => {
       description: "Tools and frameworks for building server-side applications",
       icon: <FileCode className="text-5xl text-cyan-400" />,
       items: [
-        { name: "Spring Framework" },
+        { name: "Spring Boot" },
+        { name: "Spring Security" },
+        { name: "Spring MVC" },
+        { name: "Spring Data JPA" },
+        { name: "Spring MongoDB" },
         { name: "JPA" },
         { name: "Hibernate" },
         { name: "CDI" },

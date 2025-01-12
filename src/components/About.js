@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import Profile from "../images/admin.jpg";
 import ParticleNetwork from './SectionBackground';
+import DownloadCv from './Download'; 
 
 const About = () => {
   const [activeSection, setActiveSection] = useState(null);
@@ -149,9 +150,8 @@ const About = () => {
           ))}
         </div>
 
-        {/* Keep your existing button */}
         <div className="mt-16 text-center">
-          {/* Your existing button code */}
+          <DownloadCv />
         </div>
       </div>
     </section>
